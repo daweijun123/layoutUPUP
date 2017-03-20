@@ -4,8 +4,20 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>布局进阶</title>
 	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
 		body{
 	    	background-color: rgb(222,222,222);
+	    }
+	    .container{
+	    	float: left;
+	    	width: 70%;
+	    }
+	    .side{
+	    	float: left;
+	    	width: 30%;
 	    }
 	    #first{
 
@@ -39,9 +51,16 @@
 		.artical1,
 		.artical2,
 		.artical3,
-		.picture,
+		.picture
+		{
+			margin: 10px;
+			padding: 15px;
+			background-color: rgb(255, 255, 255);
+			box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+			
+		}
 		.biaoge{
-			margin: 15px;
+			margin: 10px 10px 10px 10px;
 			padding: 15px;
 			background-color: rgb(255, 255, 255);
 			box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
@@ -52,28 +71,58 @@
 		.artical3>p:nth-child(3){
 			font-size: 14px;
 		    color: rgb(111, 111, 111);
+		    line-height: 40px;
 		}
-		.artical1 h2,
-		.artical2 h2,
-		.artical3 h2{
-			color: rgb(111, 111, 111);
+		.artical1 h2 p,
+		.artical2 h2 p,
+		.artical3 h2 p{
+			color: black;
+			line-height: 40px;
+			font-weight: 900;
 		}
 		.artical1>p:nth-of-type(2),
 		.artical2>p:nth-of-type(2){
 			text-indent: 2em;
 		    
 		}
-		.picture li{
-			margin-top: 10px;
-			padding: 10px;
-			border: 1px solid rgb(184,184,184);
-			list-style-type: none;
+		.artical2 li{
+			list-style: none;
 		}
+
+		/*图片部分*/
+		.picture{
+			overflow: hidden;
+		}
+		.picture h2{
+			font-weight: bolder;  /*增粗文字*/
+			font-size: 40px;
+		
+		}
+
+		.lala{
+			float: left;
+			margin: 40px;
+			border:1px solid #999;
+		}
+		.picture img{
+			margin: 10px;
+			font-weight: bold;  /*增粗文字*/
+		}
+
 		.picture p{
 			text-align: center;
 		}
 		#jiacu{
 			font-weight: bold;
+		}
+		.artical3 li{
+			list-style-type: decimal;
+			padding: 5px;
+			margin-left:50px; 
+
+		}
+		.artical3 ul{
+			padding: 20px;
 		}
 		.artical3 table{
 			width: 100%;
@@ -100,10 +149,18 @@
 	    #first td{
 	    	color: white;
 	    }
+	    .biaoge{
+	    	/*padding-left: 20px;*/
+
+	    }
 	    .biaoge h2{
 	    	border-left: 5px solid rgb(204,204,204);
 	    	padding-left: 10px;
+	    	font-weight: 900;
 	    }
+	   .biaoge h3{
+	   		font-weight: 900;
+	   }
 	    #buju2{
 	    	margin:0 auto;
 	    }
@@ -144,11 +201,12 @@
 	   	height: 100px;
 	   	line-height: 100px;
 	   	width: 100%;
+	   	overflow: hidden;
 
 	   }
 	   .foot p{
 	   	color: white;
-	   text-align: center;//使文字居中
+	   text-align: center;/*使文字居中*/
 
 	   }
 
@@ -156,7 +214,9 @@
 	</style>
 </head>
 <body>
-	<div id="head1">
+
+	
+		<div id="head1">
 			<img src="baidu.png" alt="">
 			<ul>
 				<li><a href="a">导航链接一</a></li>
@@ -165,9 +225,11 @@
 				<li><a href="a">导航链接四</a></li>
 			</ul>
 		</div>
+<div>
+	<div class="container">
 		<div class="artical1">
 			<h1>文章一级标题</h1>
-			<h2>文章二级标题</h2>
+			<h2><p>文章二级标题</p></h2>
 			<p>文章作者&nbsp;文章发表时间</p>
 			<p>这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落， 这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，</br>
 			 这是一个很长的段落，<span><a href="a">http://ife.baidu.com</a></span>这是一个<span id="jiacu">很长的段落</span>
@@ -180,7 +242,7 @@
 	
 		<div class="artical2">
 			 <h1>另一篇文章一级标题</h1>
-			 <h2>二级标题</h2>
+			<h2><p>文章二级标题</p></h2>
 			 <p>文章作者&nbsp;文章发表时间</p>
 			 <p>这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落， </br>这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，
 			 这是一个很长的段落，<span><a href="a">http://ife.baidu.com</a></span>这是一个<span id="jiacu">很长的段落</span>
@@ -195,28 +257,45 @@
          </div>
 		<div class="picture">
 		 	<h2>图片</h2>
-		 	<ul>
-		 		<li>
+		 	    <div class="lala">
 		 		 <p>好看的图片</p>
 			 	 <img src="lala.jpg" alt="">
-			 	</li>
-			 	<li>
-			 	 <p>好看的图片</p>
+			    </div>
+			 	<div class="lala">
+		 		 <p>好看的图片</p>
 			 	 <img src="lala.jpg" alt="">
-			 	</li>
-			 	<li>
-			 	 <p>好看的图片</p>
+			    </div>
+			    <div class="lala">
+		 		 <p>好看的图片</p>
 			 	 <img src="lala.jpg" alt="">
-			 	</li>
+			    </div>
+			    <div class="lala">
+		 		 <p>好看的图片</p>
+			 	 <img src="lala.jpg" alt="">
+			    </div>
+			    <div class="lala">
+		 		 <p>好看的图片</p>
+			 	 <img src="lala.jpg" alt="">
+			    </div>
+			    <div class="lala">
+		 		 <p>好看的图片</p>
+			 	 <img src="lala.jpg" alt="">
+			    </div>
+			 	
 			 	 
-		    </ul>
+		    
 		 </div>
 
 	<div class="artical3"> 
 
 		 <h1>最后一篇文章一级标题</h1>
-		 <h2>文章二级标题</h2>
+		 <h2><p>文章二级标题</p></h2>
 		 <p>文章作者&nbsp;文章发表时间</p>
+		 <ul>
+		 	<li>排名1</li>
+		 	<li>排名2</li>
+		 	<li>排名3</li>
+		 </ul>
 		 <table id="biaoge">
 	    		<tr id="first">
 		    		<td>表头</td>
@@ -251,10 +330,14 @@
 	    		</tr>
 	    	</table>
 	</div>
+</div>
+
+<div class="side">
 	<div class="biaoge">
 		<h2>这里以后是一个侧栏</h2>
-		<form id="buju">
-			<table id="buju2">
+		<h3>侧栏注册窗口标题</h3>
+		<form id="buju">   
+			<table id="buju2"> 
 				<tr>
 					
 						<td><label>输入邮箱地址：</label></td>
@@ -337,6 +420,8 @@
 			<input type="button" value="确认提交"  name="submit" />
         </form>
 	</div>
+</div>
+</div>
 	<footer class="foot">
 		<p>版权所有&copy;</p>
 	</footer>
